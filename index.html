@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>90年代网络博客</title>
+<style>
+    @font-face {
+        font-family: 'Chusung';
+        src: url('Chusung') format('truetype');
+    }
+
+    @font-face {
+        font-family: 'Unifont';
+        src: url('unifont') format('opentype');
+    }
+
+    body {
+        font-family: 'Unifont', Arial, sans-serif;
+        background-color: #008080;
+        color: #ffffff;
+        margin: 0;
+        padding: 0;
+    }
+    .container {
+        display: flex;
+        justify-content: center; /* 让内容水平居中 */
+    }
+    .content {
+        flex: 0 0 50%; /* 占据屏幕中央50% */
+        background-color: rgb(236, 233, 216); /* 指定的 RGB 值 */
+        padding: 20px;
+    }
+    .main {
+        text-align: left; /* 左对齐文本 */
+        font-family: 'Unifont', serif; /* 使用Unifont字体 */
+        font-weight: bold; /* 粗体 */
+        color: black; /* 黑色文字 */
+    }
+    .sidebar {
+        flex: 0 0 300px;
+        background-color: #f0f0f0; /* 浅灰色背景 */
+        padding: 20px;
+        border: 2px solid gray; /* 添加灰色边框 */
+    }
+    .ad {
+        margin-bottom: 20px;
+    }
+    .ad img {
+        width: 100%;
+        height: auto;
+    }
+    .blogborder{
+        flex:0 0 75%;
+        background-color: rgb(25, 0, 255);
+        border: 3px gray;
+    }
+    .blog{
+        text-align: left; /* 左对齐文本 */
+        font-family: 'Unifont', serif; /* 使用Unifont字体 */
+        color: whitesmoke; /* 黑色文字 */
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="content">
+        <div class="main">
+            <h1>
+                <img src="LOGO.png" alt="LOGO">
+                TCV News
+            </h1>
+            <p>这里是您获取最新资讯和观点的地方。</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non diam at nunc ultricies scelerisque vehicula ac elit.</p>
+            <h2>最新帖子</h2>
+            <div class="blogborder">
+                <div class="blog">
+                <h3>神明宣布退任TCV组长</h3>
+                <p>鉴于制作组内多位成员宣布退组后形成的局势，我停止自己作为TCV制作组组长的活动。作出这一决定是出于原则性考虑。
+                    我坚决主张制作内容的独立自主，主张各策划拥有自己主张。但同时又主张维护 TCV 的完整性。
+                    事情已沿着另外一条道路发展下去。主张肢解、分离 TCV 的路线占了上风，这是我无法同意的。
+                    即使在该组会议和会议通过决定之后，我在这个问题上的立场也始终未变。
+                    因此，我想衷心感谢那些近年来与我一起坚持制作 TCV 的人们。也许某些错误本来是可以避免的，许多事情可以做得更好。但是我相信我们的共同努力迟早会结出果实，我们的模组迟早会变成一个闻名 P 社圈子的优质模组。
+                    祝大家万事如意。</p>
+                </div>
+                <div class="blog">
+                    <h3>TCV发布Beta0.1.8版本</h3>
+                    <p>经过组员的不懈努力，TCV Beta 0.1.8得以按时推出。据悉，此版本的TCV增加了意大利、德意志、巴伐利亚、英国、cpc、日本、民国的多个国家的内容，并优化了部分屎山代码，使玩家在游玩过程中能够获得更加优秀的游戏体验</p>
+                    </div>
+            </div>
+        </div>
+    </div>
+    <div class="sidebar" id="sidebar">
+        <!-- 广告将通过JavaScript动态加载到这里 -->
+    </div>
+</div>
+
+<script>
+    // 广告图片数组
+    const ads = ['1.png', '2.png', '3.png', '4.png', '5.png']; // 假设您有5张广告图片
+
+    // 随机选择5张广告图片
+    const selectedAds = [];
+    while (selectedAds.length < 5) {
+        const randomAd = ads[Math.floor(Math.random() * ads.length)];
+        if (!selectedAds.includes(randomAd)) {
+            selectedAds.push(randomAd);
+        }
+    }
+
+    // 在侧边栏展示选中的广告图片
+    const sidebar = document.getElementById('sidebar');
+    selectedAds.forEach(ad => {
+        const adElement = document.createElement('div');
+        adElement.classList.add('ad');
+        adElement.innerHTML = `<img src="${ad}" alt="广告">`;
+        sidebar.appendChild(adElement);
+    });
+</script>
+</body>
+</html>
