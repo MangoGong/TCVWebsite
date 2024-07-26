@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TCV News-什么是TCV?</title>
+<style>
+    @font-face {
+        font-family: 'Chusung';
+        src: url('Chusung') format('truetype');
+    }
+
+    @font-face {
+        font-family: 'Unifont';
+        src: url('unifont') format('opentype');
+    }
+
+    body {
+        font-family: 'Unifont', Arial, sans-serif;
+        background-color: #008080;
+        color: #ffffff;
+        margin: 0;
+        padding: 0;
+    }
+    .container {
+        display: flex;
+        justify-content: center; /* 让内容水平居中 */
+    }
+    .content {
+        flex: 0 0 50%; /* 占据屏幕中央50% */
+        background-color: rgb(236, 233, 216); /* 指定的 RGB 值 */
+        padding: 20px;
+    }
+    .main {
+        text-align: left; /* 左对齐文本 */
+        font-family: 'Unifont', serif; /* 使用Unifont字体 */
+        font-weight: bold; /* 粗体 */
+        color: black; /* 黑色文字 */
+        line-height: 20px;
+    }
+    .sidebar {
+        flex: 0 0 300px;
+        background-color: #f0f0f0; /* 浅灰色背景 */
+        padding: 20px;
+        border: 2px solid gray; /* 添加灰色边框 */
+    }
+    .ad {
+        margin-bottom: 20px;
+    }
+    .ad img {
+        width: 100%;
+        height: auto;
+    }
+    .blogborder{
+        flex:0 0 75%;
+        background-color: rgb(25, 0, 255);
+        border: 3px gray;
+    }
+    .blog{
+        text-align: left; /* 左对齐文本 */
+        font-family: 'Unifont', serif; /* 使用Unifont字体 */
+        color: whitesmoke; /* 黑色文字 */
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="content">
+        <div class="main">
+            <h1>
+                <a href="../index.html"><img src="LOGO.png" alt="LOGO"></a>
+                Mosley美图
+            </h1>
+            <img src="Mosley.jpg" width="550">
+            我们为您准备了各种大小的文件，以便您欣赏与使用
+            <table border="3">
+                <tr>
+                    <td align="center">图片格式</td>
+                    <td align="center">未压缩</td>
+                    <td align="center">压缩率20%</td>
+                    <td align="center">压缩率50%</td>
+                    <td align="center">压缩率80%</td>
+                </tr>
+                <tr>
+                    <td>JPG</td>
+                    <td><a href="Mosley.jpg" download="Mosley.jpg">3.03MB</a></td>
+                    <td><a href="80%Mosley.jpg" download="80%Mosley.jpg">480KB</a></td>
+                    <td><a href="50%Mosley.jpg" download="50%Mosley.jpg">212KB</a></td>
+                    <td><a href="20%Mosley.jpg" download="20%Mosley.jpg">112KB</a></td>
+                </tr>
+                <tr>
+                    <td>PNG</td>
+                    <td><a href="Mosley.png" download="Mosley.png">12.9MB</a></td>
+                    <td><a href="80%Mosley.png" download="80%Mosley.png">5.1MB</a></td>
+                    <td><a href="50%Mosley.png" download="50%Mosley.png">3.27MB</a></td>
+                    <td><a href="20%Mosley.png" download="20%Mosley.png">1.72MB</a></td>
+                </tr>
+            </table>
+            Tip:在打开新窗口右击鼠标，选择“图片另存为”
+        </div>
+    </div>
+    <div class="sidebar" id="sidebar">
+        <!-- 广告将通过JavaScript动态加载到这里 -->
+    </div>
+</div>
+
+<script>
+    // 广告图片数组
+    const ads = ['1.png', '2.png', '3.png', '4.png', '5.png', '6.png']; // 假设您有5张广告图片
+
+    // 随机选择5张广告图片
+    const selectedAds = [];
+    while (selectedAds.length < 5) {
+        const randomAd = ads[Math.floor(Math.random() * ads.length)];
+        if (!selectedAds.includes(randomAd)) {
+            selectedAds.push(randomAd);
+        }
+    }
+
+    // 在侧边栏展示选中的广告图片
+    const sidebar = document.getElementById('sidebar');
+    selectedAds.forEach(ad => {
+        const adElement = document.createElement('div');
+        adElement.classList.add('ad');
+        adElement.innerHTML = `<img src="${ad}" alt="广告">`;
+        sidebar.appendChild(adElement);
+    });
+</script>
+<div class="container">
+    <h3>
+        <p>Powered by TCV© | Made by MangoGong</p>
+        <div class="container">
+            <p>All rights reserved 2024</p>
+        </div>
+        <div class="sidebar">
+        <a href="https://space.bilibili.com/588890964">
+            <img src="bank.jpg" alt="Mangobank" width="300" height="116.67">
+    </h3>
+</div>
+</body>
+</html>
